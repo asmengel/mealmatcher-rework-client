@@ -13,7 +13,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { LandingComponent } from './landing/landing.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 
@@ -24,7 +23,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
     LoginComponent,
     NavbarComponent,
     HomepageComponent,
-    LandingComponent,
     NotfoundComponent
   ],
   imports: [
