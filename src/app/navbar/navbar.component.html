@@ -1,7 +1,8 @@
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Sign Up</button>
-  <button mat-menu-item>Log In</button>
-  <button mat-menu-item>My Profile</button>
-  <button mat-menu-item>New Search</button>
+  <button routerLinkActive="active current" mat-menu-item>
+    <a routerLink="/signup">Sign Up</a></button>
+  <button routerLinkActive="active current" mat-menu-item><a routerLink="/login">Log In</a></button>
+  <button routerLinkActive="active current" mat-menu-item><a routerLink="/profile">My Profile</a></button>
+  <button routerLinkActive="active current" mat-menu-item><a routerLink="/newsearch">New Search</a></button>
 </mat-menu>

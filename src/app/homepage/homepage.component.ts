@@ -12,4 +12,16 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(query) {
+    let key = "37d84524d8363b1117c5be481d714582"
+   let search = {
+     q: query,
+     apiId: key
+   }
+  }
+  callBack(data) {
+    
+
+
+  }
 }

@@ -1,0 +1,8 @@
+<navbar></navbar>
+<div *ngFor="let restaurant of restaurants">
+  <h2> {{ restaurant.restaurant.name }}</h2>
+   <li>{{ restaurant.restaurant.cuisines }}</li>
+   <li>{{ restaurant.restaurant.location.address }}</li>
+   <li>User rating: {{ restaurant.restaurant.user_rating.aggregate_rating}} out of 5</li>
+   <button>More Details</button>
+</div>
