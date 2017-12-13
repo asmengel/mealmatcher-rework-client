@@ -96,6 +96,7 @@ export function getAuthHttp(http) {
   ],
   providers: [
     ResultsService,
+    AuthService,
     AuthGuard,
     AdminAuthGuard,
     AuthHttp,

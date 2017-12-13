@@ -7,10 +7,10 @@
      <mat-form-field>
             <div *ngIf="invalidLogin" class="alert alert-danger">
               Invalid username or password.</div>
-      <input  ngModel matInput placeholder="Username">
+      <input  type="email" name="username" ngModel matInput placeholder="Username">
     </mat-form-field>
     <mat-form-field>
-        <input ngModel matInput placeholder="Password">
+        <input type="password" name="password" ngModel matInput placeholder="Password">
       
     </mat-form-field>
  

@@ -16,7 +16,12 @@ export class AuthService {
   }
 
   login(credentials) { 
-   return this.http.post('localhost:8080/api/auth/login', JSON.stringify(credentials))
+    let options: any = {
+      headers: {
+        Authorization: `Basic ${btoa(credentials.username+':'+credentials.password)}`
+      }
+    }
+   return this.http.post('http://localhost:8080/api/auth/login', JSON.stringify(credentials), options)
     .map(response => {
       let result = response.json();
       

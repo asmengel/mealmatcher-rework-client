@@ -1,9 +1,9 @@
 <navbar></navbar>
 <h1>Home Page Placeholder</h1>
 <h1>Meal Matcher</h1>
-<form>
-    <input class="search-bar">
-    <button (submit)="search()">Search</button>
+<form  (ngSubmit)="search(searchBox)" >
+        <input name="searchBox" class="searchBox" ngModel placeholder="search">
+    <button type="submit" >Search</button>
 </form>
 
 

@@ -1,4 +1,6 @@
+import { ResultsService } from './../services/results.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'homepage',
@@ -6,18 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
-  constructor() { }
+public searchBox = '';
+  constructor(
+    private service: ResultsService) { }
 
   ngOnInit() {
   }
 
-  search(query) {
-    let key = "37d84524d8363b1117c5be481d714582"
-   let search = {
-     q: query,
-     apiId: key
-   }
+  search(search) {
+  console.log('search submitted', search);
+   this.service.searchResults(search)
+   .subscribe(results=> {
+     console.log(results);
+   })
   }
   callBack(data) {
     
