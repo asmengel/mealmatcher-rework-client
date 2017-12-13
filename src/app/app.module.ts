@@ -1,4 +1,6 @@
-
+import { AdminAuthGuard } from './services/admin-auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { ResultsService } from './services/results.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,8 +11,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -21,7 +24,13 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ResultsComponent } from './results/results.component';
 import { DetailedresultComponent } from './detailedresult/detailedresult.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
+export function getAuthHttp(http) {
+  return new AuthHttp(new AuthConfig({
+    tokenName: 'token'
+  }), http);
+}
 
 @NgModule({
   declarations: [
@@ -42,8 +51,10 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
+    FormsModule,
     HttpModule,
     HttpClientModule,
+    
     RouterModule.forRoot([
       {
         path:'login',
@@ -85,6 +96,14 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   providers: [
     ResultsService,
+    AuthGuard,
+    AdminAuthGuard,
+    AuthHttp,
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http]
+    },
     {provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

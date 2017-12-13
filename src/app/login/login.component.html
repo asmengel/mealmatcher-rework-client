@@ -2,15 +2,21 @@
 
 <h1>Login in Screen Placeholder</h1>
 
-<div class="login-container">
-    
-    <mat-form-field>
-      <input matInput placeholder="Username">
+<form class="form-signin" #SI="ngForm" (ngSubmit)="signIn(SI.value)">
+     <mat-form-field > 
+     <mat-form-field>
+            <div *ngIf="invalidLogin" class="alert alert-danger">
+              Invalid username or password.</div>
+      <input  ngModel matInput placeholder="Username">
     </mat-form-field>
     <mat-form-field>
-        <input matInput placeholder="Password">
+        <input ngModel matInput placeholder="Password">
+      
     </mat-form-field>
-    
+ 
     <button mat-button>Log In</button>
+     </mat-form-field>
+ 
+
     
-  </div>
+    </form>
