@@ -23,23 +23,16 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     console.log('results component fired');
-    this.service.getAll()
-    .map(res => res.json())
-    // let obs = Observable.combineLatest([
-    //   this.route.paramMap,
-    //   this.route.queryParamMap
-    // ])
-    // .switchMap(combined => {
-    //   let name = combined[0].get('name');
-    //   return this.service.getAll();
-    // })
-    .subscribe((restaurants: any) => {
-      //console.log(JSON.parse(restaurants._body));
-      this.restaurants = restaurants.restaurants;
+    this.route.params.subscribe(params => {
+      this.restaurants = JSON.parse(params['results']);
       console.log(this.restaurants);
-    })
+      
+   }); 
+    
+    
+    
 
-    ;
+    
   }
 
 }

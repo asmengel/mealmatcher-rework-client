@@ -24,9 +24,9 @@ export class AuthService {
    return this.http.post('http://localhost:8080/api/auth/login', JSON.stringify(credentials), options)
     .map(response => {
       let result = response.json();
-      
-      if (result && result.token) {
-        localStorage.setItem('token', result.token);
+      console.log(result, response);
+      if (result && result.authToken) {
+        localStorage.setItem('token', result.authToken);
 
         let jwt = new JwtHelper();
         this.currentUser = jwt.decodeToken(localStorage.getItem('token'));

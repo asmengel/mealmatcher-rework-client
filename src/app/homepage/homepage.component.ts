@@ -1,6 +1,6 @@
 import { ResultsService } from './../services/results.service';
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'homepage',
@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomepageComponent implements OnInit {
 public searchBox = '';
   constructor(
-    private service: ResultsService) { }
+    private service: ResultsService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,12 +20,9 @@ public searchBox = '';
   console.log('search submitted', search);
    this.service.searchResults(search)
    .subscribe(results=> {
+    this.router.navigate(['/searchresults', {results: JSON.stringify(results.restaurants)}]);
      console.log(results);
    })
-  }
-  callBack(data) {
-    
-
-
+   
   }
 }
