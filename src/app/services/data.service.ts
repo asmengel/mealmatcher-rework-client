@@ -44,6 +44,14 @@ export class DataService {
       .catch(this.handleError);
   }
 
+  public jwtHandler() {
+    let options: any = {
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`
+      }
+    }
+    return options;
+  }
   public handleError(error: Response) {
     if (error.status === 400)
       return Observable.throw(new BadInput(error.json()));

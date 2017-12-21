@@ -4,5 +4,5 @@
    <li>{{ restaurant.restaurant.cuisines }}</li>
    <li>{{ restaurant.restaurant.location.address }}</li>
    <li>User rating: {{ restaurant.restaurant.user_rating.aggregate_rating}} out of 5</li>
-   <button>More Details</button>
+   <button (click)="moreDetails(restaurant.restaurant)">More Details</button>
 </div>

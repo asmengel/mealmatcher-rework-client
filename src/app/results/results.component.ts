@@ -1,7 +1,9 @@
+
 import { Observable } from 'rxjs/Observable';
 import { ResultsService } from './../services/results.service';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router/';
+import { Component, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router/';
+
 
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/map';
@@ -14,10 +16,11 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ResultsComponent implements OnInit {
   restaurants: any[];
-
+  restaurant = [];
   constructor(
     private route: ActivatedRoute,
-    private service: ResultsService) { 
+    
+    private router: Router) { 
     
   }
 
@@ -28,11 +31,12 @@ export class ResultsComponent implements OnInit {
       console.log(this.restaurants);
       
    }); 
-    
-    
-    
+   }
+  
+   moreDetails(restaurant) {
 
-    
+     this.restaurant = restaurant ;
+     this.router.navigate([`/searchresults/${restaurant.name}/${restaurant.id}`, {restaurant: JSON.stringify(this.restaurant)}])
   }
 
 }

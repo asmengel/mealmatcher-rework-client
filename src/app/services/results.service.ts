@@ -22,5 +22,12 @@ export class ResultsService extends DataService{
     
       
   }
+  join(id) {
+    return this.http.get(`${this.url}/api/restaurant/join/${id}`, this.jwtHandler())
+    .map(response => response.json())
+    .catch(this.handleError);
+
+  }
+
 
 }

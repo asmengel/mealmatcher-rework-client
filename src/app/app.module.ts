@@ -1,3 +1,5 @@
+
+import { DataService } from './services/data.service';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
@@ -73,7 +75,7 @@ export function getAuthHttp(http) {
         component: HomepageComponent
       },
       {
-        path:'searchresults/:id',
+        path:'searchresults/:restaurantname/:id',
         component: DetailedresultComponent
       },
       {
@@ -96,6 +98,7 @@ export function getAuthHttp(http) {
   ],
   providers: [
     ResultsService,
+    
     AuthService,
     AuthGuard,
     AdminAuthGuard,
