@@ -1,12 +1,12 @@
 <navbar></navbar>
-<h1>Detailed Results PlaceHolder</h1>
+<h1>{{restaurant.name}}</h1>
 <div class="restaurant-details-div">
   <ul>
-    <li>name: {{restaurant.name}}</li>
-    <li>Address</li>
-    <li>rating</li>
-    <li>Cuisine</li>
-    <li>average cost for 2</li>
+    
+    <li>This establishment is located at: {{restaurant.location.address}}</li>
+    <li>This establishment has a {{restaurant.user_rating.aggregate_rating}} out of 5 rating</li>
+    <li>The class of food here is: {{restaurant.cuisines}}</li>
+    <li>Average cost for 2 guests: ${{restaurant.average_cost_for_two}}</li>
   </ul>
   <button (click)="join(restaurant.id)">I want to eat here!</button>
 </div>
