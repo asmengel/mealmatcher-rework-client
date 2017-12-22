@@ -29,5 +29,11 @@ export class ResultsService extends DataService{
 
   }
 
+  getReservations(id) {
+    return this.http.get(`${this.url}/api/restaurant/reservations/${id}`)
+    .map(res => res.json())
+    .catch(this.handleError);
+
+  }
 
 }

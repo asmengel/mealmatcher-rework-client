@@ -17,7 +17,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class DetailedresultComponent implements OnInit {
 data: any;
-@Input() restaurant: any[];
+restaurantDb: any;
+@Input() restaurant: any;
     constructor(
       private route: ActivatedRoute,
       private service: ResultsService,
@@ -30,6 +31,12 @@ data: any;
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
       console.log(this.restaurant);
+      
+      this.service.getReservations(this.restaurant.R.res_id)
+      .subscribe(restaurantDb => {
+        this.restaurantDb = restaurantDb
+        console.log(restaurantDb, 'restDB');
+      }) 
       
    });
     
