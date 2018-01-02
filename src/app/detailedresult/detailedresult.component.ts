@@ -3,7 +3,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 import { Observable } from 'rxjs/Observable';
 
 import { Component, OnInit, Input} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router/';
+import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router/';
 
 
 import 'rxjs/add/observable/combineLatest';
@@ -18,6 +18,9 @@ import 'rxjs/add/operator/switchMap';
 export class DetailedresultComponent implements OnInit {
 data: any;
 restaurantDb: any;
+checker: any;
+returnUrl: string;
+
 @Input() restaurant: any;
     constructor(
       private route: ActivatedRoute,
@@ -27,32 +30,36 @@ restaurantDb: any;
     }
 
   ngOnInit() {
+    //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     console.log('detailed results fired');
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
       console.log(this.restaurant);
+      })
+     
       
-      this.service.getReservations(this.restaurant.R.res_id)
-      .subscribe(restaurantDb => {
-        this.restaurantDb = restaurantDb
-        console.log(restaurantDb, 'restDB');
-      }) 
-      
-   });
+  }
+  seeGuests(data) {
+    console.log(data);
     
   }
   join(id) {
-    if(localStorage.token){
+    
+    if(localStorage.getItem('token')){
+      console.log('local storage present');
       this.service.join(id)
       .subscribe(result => {
         alert('you joined the list')
         
       }, error => {
-        this.router.navigate([`/login`]);
+        console.log(error);
+        this.router.navigate([`/login`, {returnUrl: window.location.pathname}]);
       })
     }
     else {
-      this.router.navigate([`/login`]);
+      console.log('login with return url fired');
+      this.router.navigate(['/login', {returnUrl: window.location.pathname}])//, { queryParams: { returnUrl: state.url }});
+      return false;
       
     }
   }
