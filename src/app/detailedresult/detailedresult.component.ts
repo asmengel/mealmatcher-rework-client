@@ -9,6 +9,7 @@ import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router/';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
+import { NotFoundError } from '../common/not-found-error';
 
 @Component({
   selector: 'detailedresult',
@@ -20,6 +21,8 @@ data: any;
 restaurantDb: any;
 checker: any;
 returnUrl: string;
+response: any;
+reservations: any;
 
 @Input() restaurant: any;
     constructor(
@@ -35,19 +38,48 @@ returnUrl: string;
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
       console.log(this.restaurant);
+      this.seeGuests(this.restaurant);
       })
-     
+      
       
   }
   seeGuests(data) {
-    console.log(data);
+    let res = this.service.seeGuests(data.id)
+    .subscribe(res => {
+      console.log('see guests', res)
+      if(res === null || res === undefined) {
+        return console.log('if statement works');
+      }
+    }, 
+      error => {
+        if(error instanceof NotFoundError){
+          this.reservations = null;
+          console.log('this is where we should be doing something to post');
+        }
+        else {
+          alert('unhandled error')
+        }
+        console.log('error', error);
+      })
+      console.log('past response', res);
+      
+    
+      
+      
+      
+    
     
   }
   join(id) {
     
     if(localStorage.getItem('token')){
+      const rest = {
+        RestaurantName: this.restaurant.name,
+        RestaurantId: this.restaurant.id
+      }
+
       console.log('local storage present');
-      this.service.join(id)
+      this.service.join(id, rest)
       .subscribe(result => {
         alert('you joined the list')
         

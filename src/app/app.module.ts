@@ -1,6 +1,6 @@
 
 import { DataService } from './services/data.service';
-import { AdminAuthGuard } from './services/admin-auth-guard.service';
+//import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -101,7 +101,7 @@ export function getAuthHttp(http) {
     
     AuthService,
     AuthGuard,
-    AdminAuthGuard,
+    //AdminAuthGuard,
     AuthHttp,
     {
       provide: AuthHttp,
