@@ -34,10 +34,10 @@ reservations: any;
 
   ngOnInit() {
     //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    console.log('detailed results fired');
+    //console.log('detailed results fired');
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
-      console.log(this.restaurant);
+      console.log('this restaurant', this.restaurant);
       this.seeGuests(this.restaurant);
       })
       
@@ -74,8 +74,10 @@ reservations: any;
     
     if(localStorage.getItem('token')){
       const rest = {
+        
+        RestaurantId: this.restaurant.id,
         RestaurantName: this.restaurant.name,
-        RestaurantId: this.restaurant.id
+        RestaurantAddress: this.restaurant.location,
       }
 
       console.log('local storage present');
