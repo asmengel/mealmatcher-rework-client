@@ -1,3 +1,4 @@
+import { NewUserService } from './services/new-user.service';
 
 import { DataService } from './services/data.service';
 //import { AdminAuthGuard } from './services/admin-auth-guard.service';
@@ -6,6 +7,7 @@ import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { ResultsService } from './services/results.service';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -103,6 +105,7 @@ export function getAuthHttp(http) {
     AuthGuard,
     //AdminAuthGuard,
     AuthHttp,
+    NewUserService,
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,

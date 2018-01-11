@@ -12,6 +12,7 @@
 </div>
 <div *ngIf="reservations" class="users-who-eat-here">
   <h2>Users who want to eat placeholder</h2>
+  <li *ngFor="let user of reservations" >{{user.username}}</li>
 </div>
 <div *ngIf="!reservations" class="users-who-eat-here">
   <h2>You can be the first to eat here</h2>

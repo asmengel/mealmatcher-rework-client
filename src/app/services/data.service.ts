@@ -47,7 +47,8 @@ export class DataService {
   public jwtHandler() {
     let options: any = {
       headers: {
-        Authorization: `Bearer ${localStorage.token}`
+        Authorization: `Bearer ${localStorage.token}`,
+        "content-type": "application/json"
       }
     }
     return options;

@@ -3,25 +3,31 @@
 
 
 <div class="sign-up-container">
-  
+  <form class="no-style form-signup" #SU="ngForm" (ngSubmit)="signUp(SU.value)">
   <mat-form-field>
-    <input matInput placeholder="Username">
+    <input matInput name="username" ngModel placeholder="Username">
   </mat-form-field>
+  <br>
   <mat-form-field>
-      <input matInput placeholder="Password">
+      <input matInput name="password" ngModel placeholder="Password">
   </mat-form-field>
+  <br>
   <mat-form-field>
-    <input matInput placeholder="First Name">
+    <input matInput name="firstName" ngModel placeholder="First Name">
   </mat-form-field>
+  <br>
   <mat-form-field>
-    <input matInput placeholder="Last Name">
+    <input matInput name="lastName" ngModel placeholder="Last Name">
   </mat-form-field>
+  <br>
   <mat-form-field>
-    <input matInput placeholder="Email Address">
+    <input matInput name="email" ngModel placeholder="Email Address">
   </mat-form-field>
+  <br>
   <mat-form-field>
-    <input matInput placeholder="Phone Number">
+    <input matInput name="phonenumber" ngModel placeholder="Phone Number">
   </mat-form-field>
+  <br>
   <button mat-button>Submit</button>
-  
+</form>
 </div>

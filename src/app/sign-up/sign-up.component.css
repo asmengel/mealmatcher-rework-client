@@ -6,3 +6,6 @@
   .sign-up-container > * {
     width: 100%;
   }
+  .no-style {
+    all: none;
+  }

@@ -47,9 +47,7 @@ reservations: any;
     let res = this.service.seeGuests(data.id)
     .subscribe(res => {
       console.log('see guests', res)
-      if(res === null || res === undefined) {
-        return console.log('if statement works');
-      }
+      this.reservations = res.UsersInterested
     }, 
       error => {
         if(error instanceof NotFoundError){
