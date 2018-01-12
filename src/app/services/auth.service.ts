@@ -21,7 +21,7 @@ export class AuthService {
         Authorization: `Basic ${btoa(credentials.username+':'+credentials.password)}`
       }
     }
-   return this.http.post('https://themealmatcher.herokuapp.com/api/auth/login', JSON.stringify(credentials), options)
+   return this.http.post('http://localhost:8080/api/auth/login', JSON.stringify(credentials), options)
     .map(response => {
       let result = response.json();
       console.log(result, response);
