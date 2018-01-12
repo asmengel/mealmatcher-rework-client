@@ -2,6 +2,7 @@
 import { AuthService } from './../services/auth.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'login',
@@ -17,7 +18,8 @@ returnUrl: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    public snackBar: MatSnackBar) { }
 
     ngOnInit() {
 
@@ -28,19 +30,32 @@ returnUrl: string;
         });    
       //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
-      this.authService.logout();
+      //this.authService.logout();
 
       console.log(this.route.snapshot)
     }
+
+    openSnackBar(message: string, action: string) {
+      this.snackBar.open(message, action, {
+        duration: 2000,
+      });
+    }
+
+
     signIn(credentials) {
       this.loading = true;
       this.authService.login(credentials)
       .subscribe(
         data => {
-          console.log(this.returnUrl);
+          if(this.returnUrl) {
+            console.log(this.returnUrl);
           this.router.navigateByUrl(this.returnUrl);
+          }
+          else this.router.navigateByUrl("/");
+          
         },
         error => {
+          this.openSnackBar('username or password does not match', 'try again');
           console.log(error)
           this.loading = false;
         }

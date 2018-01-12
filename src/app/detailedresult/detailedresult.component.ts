@@ -61,12 +61,6 @@ reservations: any;
       })
       console.log('past response', res);
       
-    
-      
-      
-      
-    
-    
   }
   join(id) {
     
@@ -81,7 +75,7 @@ reservations: any;
       console.log('local storage present');
       this.service.join(id, rest)
       .subscribe(result => {
-        alert('you joined the list')
+        this.seeGuests(this.restaurant);
         
       }, error => {
         console.log(error);

@@ -1,7 +1,8 @@
+import {MatSnackBar} from '@angular/material';
+import { AuthService } from './../services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router/';
 import { NewUserService } from './../services/new-user.service';
 import { Component, OnInit } from '@angular/core';
-
 
 @Component({
   selector: 'sign-up',
@@ -14,20 +15,37 @@ loading = false;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: NewUserService) { }
+    private service: NewUserService,
+    private loginService: AuthService,
+    public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
+
   signUp(data) {
     console.log('getting submission', data)
     this.loading = true;
     this.service.signUp(data)
       .subscribe(
-      data => {
-        console.log(this.returnUrl);
-        this.router.navigateByUrl(this.returnUrl);
+      dataSignup => {
+        this.loginService.login(data)
+        .subscribe(waiting => {
+          if(this.returnUrl) {
+            console.log(this.returnUrl);
+          this.router.navigateByUrl(this.returnUrl);
+          }
+          else this.router.navigateByUrl("/thank-you");
+        })
+       
       },
       error => {
+        this.openSnackBar('You are missing a required field', 'try again');
         console.log(error)
         this.loading = false;
       }

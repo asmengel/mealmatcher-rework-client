@@ -1,5 +1,5 @@
 import { NewUserService } from './services/new-user.service';
-
+import {MatSnackBarModule} from '@angular/material';
 import { DataService } from './services/data.service';
 //import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
@@ -29,6 +29,8 @@ import { ResultsComponent } from './results/results.component';
 import { DetailedresultComponent } from './detailedresult/detailedresult.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { ThankYouComponent } from './thank-you/thank-you.component';
+import { LogOutComponent } from './log-out/log-out.component';
 
 export function getAuthHttp(http) {
   return new AuthHttp(new AuthConfig({
@@ -46,10 +48,13 @@ export function getAuthHttp(http) {
     NotfoundComponent,
     ResultsComponent,
     DetailedresultComponent,
-    ProfileComponent
+    ProfileComponent,
+    ThankYouComponent,
+    LogOutComponent
   ],
   imports: [
     BrowserModule,
+    MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
@@ -65,8 +70,16 @@ export function getAuthHttp(http) {
         component: LoginComponent
       },
       {
+        path:'logout',
+        component: LogOutComponent
+      },
+      {
         path:'signup',
         component: SignUpComponent
+      },
+      {
+        path:'thank-you',
+        component: ThankYouComponent
       },
       {
         path:'profile',

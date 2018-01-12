@@ -1,7 +1,8 @@
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
-    <a routerLink="/signup"><button routerLinkActive="active current" mat-menu-item>Sign Up</button></a>
-    <a routerLink="/login"><button routerLinkActive="active current" mat-menu-item>Log In</button></a>
-    <a routerLink="/profile"><button routerLinkActive="active current" mat-menu-item>My Profile</button></a>
+    <a *ngIf="!isLogged()" routerLink="/signup"><button routerLinkActive="active current" mat-menu-item>Sign Up</button></a>
+    <a *ngIf="!isLogged()" routerLink="/login"><button routerLinkActive="active current" mat-menu-item>Log In</button></a>
+    <!-- <a routerLink="/profile"><button routerLinkActive="active current" mat-menu-item>My Profile</button></a> -->
     <a routerLink=""><button routerLinkActive="active current" mat-menu-item>Home</button></a>
+    <a *ngIf="isLogged()" routerLink="/logout"><button routerLinkActive="active current" mat-menu-item>Logout</button></a>
 </mat-menu>
