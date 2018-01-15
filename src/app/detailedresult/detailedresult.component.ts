@@ -1,6 +1,7 @@
 import { ResultsService } from './../services/results.service';
 import { tokenNotExpired } from 'angular2-jwt';
 import { Observable } from 'rxjs/Observable';
+import { Compiler } from '@angular/core';
 
 import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router/';
@@ -24,11 +25,13 @@ returnUrl: string;
 response: any;
 reservations: any;
 
+
 @Input() restaurant: any;
     constructor(
       private route: ActivatedRoute,
       private service: ResultsService,
-      private router: Router) { 
+      private router: Router,
+      private _compiler: Compiler) { 
       
     }
 
@@ -37,12 +40,22 @@ reservations: any;
     //console.log('detailed results fired');
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
-      console.log('this restaurant', this.restaurant);
+      console.log(this.restaurant);
       this.seeGuests(this.restaurant);
+      this.showMap(this.restaurant);
+      this._compiler.clearCache();
       })
       
       
   }
+coords = [];
+  showMap(data) {
+  let lat = Number(data.location.latitude);
+  let long = Number(data.location.longitude);
+  console.log('lat', lat, 'long', long);
+  return this.coords.push(lat) && this.coords.push(long);
+}
+
   seeGuests(data) {
     let res = this.service.seeGuests(data.id)
     .subscribe(res => {

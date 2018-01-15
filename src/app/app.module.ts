@@ -7,6 +7,7 @@ import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { ResultsService } from './services/results.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule } from '@agm/core';
 
 import { NgModule, ErrorHandler } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -50,9 +51,13 @@ export function getAuthHttp(http) {
     DetailedresultComponent,
     ProfileComponent,
     ThankYouComponent,
-    LogOutComponent
+    LogOutComponent,
+    
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDXs56qR2Ilt14AJl785F2FS8hPM2HDgm0'
+    }),
     BrowserModule,
     MatSnackBarModule,
     MatFormFieldModule,
