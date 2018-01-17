@@ -10,10 +10,18 @@ export class ResultsService extends DataService{
  
   
   }
-  searchResults(search) {
+  geoCode(search) {
+    return this.http.get(`${this.url}/geocode?search=${search}`)
+
+    .map(response => response.json())
+
+    .catch(this.handleError);
+  }
+
+  searchResults(lat, lng, miles) {
     
     
-    return this.http.get(`${this.url}/searchresults?search=${search}`)
+    return this.http.get(`${this.url}/searchresults?lat=${lat}&lng=${lng}&miles=${miles}`)
 
     .map(response => response.json())
 

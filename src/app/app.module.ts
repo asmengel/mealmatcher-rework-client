@@ -1,5 +1,5 @@
 import { NewUserService } from './services/new-user.service';
-import {MatSnackBarModule} from '@angular/material';
+import {MatSnackBarModule, MatOptionModule, MatSelectModule} from '@angular/material';
 import { DataService } from './services/data.service';
 //import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
@@ -18,7 +18,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -61,6 +62,8 @@ export function getAuthHttp(http) {
     BrowserModule,
     MatSnackBarModule,
     MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -118,7 +121,7 @@ export function getAuthHttp(http) {
   ],
   providers: [
     ResultsService,
-    
+    FormBuilder,
     AuthService,
     AuthGuard,
     //AdminAuthGuard,

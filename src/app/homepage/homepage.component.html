@@ -1,8 +1,20 @@
 <navbar></navbar>
 <h1>Meal Matcher</h1>
-<form  (ngSubmit)="search(input.value)" >
-        <input #input name="searchBox" class="searchBox"  placeholder="search">
-    <button type="submit" >Search</button>
+<form  (ngSubmit)="search(input.value, miles.value)" >
+        <input #input name="searchBox" class="input"  placeholder="Where do you want to eat?">
+        <mat-form-field
+        [hideRequiredMarker]="options.value.hideRequired"
+        [floatLabel]="options.value.floatLabel">
+        <mat-select #miles name="distance">
+            <mat-option value="1">1 Mile</mat-option>
+            <mat-option value="5">5 Miles</mat-option>
+            <mat-option  value="10">10 Miles</mat-option>
+            <mat-option  value="25">25 Miles</mat-option>
+            <mat-option  value="50">50 Miles</mat-option>
+        </mat-select>
+        <mat-placeholder><i>How far do you want to look?</i></mat-placeholder>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" >Search</button>
 </form>
 
 
