@@ -1,8 +1,12 @@
 <navbar></navbar>
-<div *ngFor="let restaurant of restaurants">
-  <h2> {{ restaurant.restaurant.name }}</h2>
+<h1>Tasty Food!</h1>
+<div class="result-container" *ngFor="let restaurant of restaurants">
+  <h2 class="results-title"> {{ restaurant.restaurant.name }}</h2>
+  <div class="minor-details">
    <li>{{ restaurant.restaurant.cuisines }}</li>
    <li>{{ restaurant.restaurant.location.address }}</li>
-   <li>User rating: {{ restaurant.restaurant.user_rating.aggregate_rating}} out of 5</li>
+   <li>User rating: {{ restaurant.restaurant.user_rating.aggregate_rating}} out of 5 <img src="assets/star.png" alt=""></li>
+   <!-- <li><img src=""></li> -->
    <button (click)="moreDetails(restaurant.restaurant)">More Details</button>
+  </div>
 </div>

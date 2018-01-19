@@ -19,6 +19,7 @@ export class ResultsComponent implements OnInit {
   restaurant = [];
   constructor(
     private route: ActivatedRoute,
+    private service: ResultsService,
     
     private router: Router) { 
     
@@ -29,6 +30,7 @@ export class ResultsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.restaurants = JSON.parse(params['results']);
       console.log(this.restaurants);
+      //this.google(this.restaurants)
       
    }); 
    }
@@ -39,4 +41,12 @@ export class ResultsComponent implements OnInit {
      this.router.navigate([`/searchresults/${restaurant.name}/${restaurant.id}`, {restaurant: JSON.stringify(this.restaurant)}])
   }
 
+  // may incoporate this later for pictures if style is right and i can afford that may api calls
+  // google(data) {
+  //   console.log('google function', data);
+  //   this.service.googlePlaces(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng)
+  //   .subscribe(response => {
+  //     console.log('googleplaces response',response)
+  //   })
+  // }
 }

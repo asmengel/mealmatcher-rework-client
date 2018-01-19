@@ -43,11 +43,20 @@ reservations: any;
       console.log(this.restaurant);
       this.seeGuests(this.restaurant);
       this.showMap(this.restaurant);
+      this.google(this.restaurant.location.latitude, this.restaurant.location.longitude)
       this._compiler.clearCache();
       })
       
       
   }
+  google(lat, lng) {
+    console.log('google function', lat,lng);
+    this.service.googlePlaces(lat, lng)
+    .subscribe(response => {
+      console.log('googleplaces response',response)
+    })
+  }
+
 coords = [];
   showMap(data) {
   let lat = Number(data.location.latitude);
@@ -65,7 +74,6 @@ coords = [];
       error => {
         if(error instanceof NotFoundError){
           this.reservations = null;
-          console.log('this is where we should be doing something to post');
         }
         else {
           alert('unhandled error')

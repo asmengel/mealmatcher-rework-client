@@ -1,20 +1,55 @@
 <navbar></navbar>
 <h1>Meal Matcher</h1>
+<div class="container">
+<div class="form">
 <form  (ngSubmit)="search(input.value, miles.value)" >
-        <input #input name="searchBox" class="input"  placeholder="Where do you want to eat?">
+    <div class="flex-container">
+    <div class="row-1">
+        <input #input name="searchBox" class="input" id="search-bar"  placeholder="Pick a city ex. Orlando">
         <mat-form-field
+        id="miles-dropdown"
         [hideRequiredMarker]="options.value.hideRequired"
         [floatLabel]="options.value.floatLabel">
-        <mat-select #miles name="distance">
+        <mat-select  #miles name="distance">
             <mat-option value="1">1 Mile</mat-option>
             <mat-option value="5">5 Miles</mat-option>
             <mat-option  value="10">10 Miles</mat-option>
             <mat-option  value="25">25 Miles</mat-option>
             <mat-option  value="50">50 Miles</mat-option>
         </mat-select>
-        <mat-placeholder><i>How far do you want to look?</i></mat-placeholder>
+        <mat-placeholder><i>Distance away</i></mat-placeholder>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" >Search</button>
+</div>
+</div>
+    <button mat-raised-button  type="submit" id="submit" >Search</button>
 </form>
+</div>
+<div class="image-table">
+    <table>
+            <tr>
+                    <img class="table-img" src="assets/food-image/big-cheeseburger.jpg" alt="">
+                    <img class="table-img" src="assets/food-image/cheese-rice.jpg" alt="">
+            
+                    <img class="table-img" src="assets/food-image/pizza.jpg" alt="">
+                    <img class="table-img" src="assets/food-image/pork-loin.jpg" alt="">'
+                </tr>
+                <tr>
+                     <img class="table-img" src="assets/food-image/rice-pork.jpg" alt="">
+                     <img class="table-img" src="assets/food-image/tacos.jpg" alt="">
+                
+                     <img class="table-img" src="assets/food-image/vegan-grass.jpg" alt="">
+                     <img class="table-img" src="assets/food-image/vegan-salad.jpg" alt="">'
+                </tr>
+        
+</table>
+                
+           
+
+    
+
+
+
+</div>
+</div>
 
 

@@ -5,3 +5,9 @@ agm-map {
     width: 300px;
     zoom: 1;
 }
+
+button {
+    color: rgba(255,255,255,.87);
+    background-color: #232b2b;
+    margin-top: 5px;
+}

@@ -10,6 +10,15 @@ export class ResultsService extends DataService{
  
   
   }
+
+  googlePlaces(lat, lng) {
+    console.log('googleplacesservice', lat, lng);
+    return this.http.get(`${this.url}/googleplaces?location=${lat},${lng}`)
+
+    .map(response => response.json())
+
+    .catch(this.handleError);
+  }
   geoCode(search) {
     return this.http.get(`${this.url}/geocode?search=${search}`)
 

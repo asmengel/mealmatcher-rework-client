@@ -1,0 +1,52 @@
+h1 {
+    font-family: 'Cookie', cursive;
+    text-align: center;
+    margin: 5% 22%;
+    padding-top: 5vh;
+    position: relative;
+}
+
+.results-title {
+    background-color:#FFCC99; 
+    border-radius: 6px; 
+    padding: 30px 100px; 
+    margin: 10px 0px 1px 0px; 
+    text-align: center;
+}
+
+.minor-details {
+    background-color: #FFFDD0; 
+    border-radius: 6px; 
+    padding: 40px 100px; 
+    margin: 2px 0px; 
+}
+button {
+    color: rgba(255,255,255,.87);
+    background-color: #232b2b;
+    margin-top: 5px;
+}
+@media screen and (max-width:1024px){
+    body {
+        -webkit-background-size: 100%; 
+        -moz-background-size: 100%; 
+        -o-background-size: 100%; 
+        background-size: 100%; 
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
+    }
+    
+    .results-container {
+        height: 40%;
+        width: 40%; 
+    }
+
+    .minor-details {
+        padding: 30px 30px; 
+    }
+    
+    .results-title {
+        padding: 30px 30px;  
+    }
+}
