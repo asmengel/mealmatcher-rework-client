@@ -3,11 +3,43 @@
 agm-map {
     height: 300px;
     width: 300px;
-    zoom: 1;
+    zoom: .8;
+    position: relative;
+    display: inline-block;
+    align-content: center;
 }
 
 button {
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
-    margin-top: 5px;
+    margin-top: 20px;
+    z-index: 5;
+}
+h1 {
+    font-size: 3em;
+    text-align: center;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    background-color:#FFCC99; 
+    /* border-radius: 6px;  */
+    width: 100%;
+}
+
+.restaurant-details-div {
+    background-color: #FFFDD0; 
+    border-radius: 6px; 
+    padding: 40px 100px; 
+    margin: 2px 0px; 
+
+}
+.users-who-eat-here {
+    background-color: #6b3e26; 
+    border-radius: 6px; 
+    padding: 40px 100px; 
+    margin: 2px 0px;
+
 }
