@@ -41,7 +41,7 @@ export class DetailedresultComponent implements OnInit {
     //console.log('detailed results fired');
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
-      console.log(this.restaurant);
+      //console.log(this.restaurant);
       this.seeGuests(this.restaurant);
       this.showMap(this.restaurant);
       this.google(this.restaurant.location.latitude, this.restaurant.location.longitude)
@@ -51,12 +51,12 @@ export class DetailedresultComponent implements OnInit {
 
   }
   google(lat, lng) {
-    console.log('google function', lat, lng);
+    //console.log('google function', lat, lng);
     this.service.googlePlaces(lat, lng)
       .subscribe(response => {
-        console.log('googleplaces response', response)
+       // console.log('googleplaces response', response)
         this.photo = response.results
-        console.log('photos', this.photo);
+       // console.log('photos', this.photo);
       })
   }
 
