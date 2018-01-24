@@ -34,7 +34,9 @@ returnUrl: string;
 
       //console.log(this.route.snapshot)
     }
-
+    signUp() {
+     this.router.navigateByUrl("/signup");
+    }
     openSnackBar(message: string, action: string) {
       this.snackBar.open(message, action, {
         duration: 2000,
