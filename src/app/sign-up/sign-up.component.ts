@@ -45,8 +45,9 @@ loading = false;
        
       },
       error => {
-        this.openSnackBar('You are missing a required field', 'try again');
-        console.log(error)
+        
+        let parsedError = JSON.parse(error.originalError._body);
+        this.openSnackBar(`${parsedError.location} ${parsedError.message}`, 'Try Again');
         this.loading = false;
       }
       )

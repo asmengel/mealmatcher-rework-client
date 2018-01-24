@@ -7,6 +7,14 @@ h1 {
     position: relative;
 
 }
+form {
+    text-align: center;
+    width: 100%;
+}
+#search-bar {
+    width: 40%;
+
+}
 h2 {
     border-bottom: 3px solid grey;
 }
@@ -25,6 +33,7 @@ h2 {
     margin: 2px;
     
 } */
+
 .container {
     margin-top: 20px;
     
@@ -44,6 +53,7 @@ table {
 }
 img{
     width: 100%;
+    
 }
 .image-table {
     display: block;

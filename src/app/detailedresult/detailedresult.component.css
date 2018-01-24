@@ -54,7 +54,7 @@ h1 {
 
 h2 {
     font-size: 20px;
-    color: white;
+    color: #6b3e26;;
 }
 .restaurant-details-div {
     background-color: #FFFDD0; 
@@ -62,11 +62,13 @@ h2 {
 
 }
 .users-who-eat-here {
-    background-color: #6b3e26; 
+    
     border-radius: 6px; 
-    padding: 5px 5px;
+    padding: auto;
+    width: 95%;
     margin: 2px 0px;
-    color: white;
+    color: #6b3e26;
+    text-align: center;
 }
 .users {
     background-color: #c2f2d0;

@@ -15,7 +15,7 @@
     
 }
 .mat-menu-item:hover:not([disabled]) {
-    background: 	#00FFFF;
+    background: 	#757575;
 }
 .subnav {
     color: rgba(255,255,255,.87);
