@@ -29,16 +29,16 @@ public searchBox = '';
 
 // }
   search(search, input: number) {
-  console.log('search submitted', search, input);
+  //console.log('search submitted', search, input);
    this.service.geoCode(search)
    .flatMap(response => {
-     console.log('flatmap', response)
+     //console.log('flatmap', response)
      //this.google(response);
      return this.service.searchResults(response.results[0].geometry.location.lat, response.results[0].geometry.location.lng, input);
      })
    .subscribe(results => {
      this.router.navigate(['/searchresults', {results: JSON.stringify(results.restaurants)}]);
-     console.log('results', results);
+     //console.log('results', results);
      //return this.google(results);
    });
    

@@ -1,38 +1,42 @@
 <navbar></navbar>
 <h1>{{restaurant.name}}</h1>
-<div class="restaurant-details-div">
- <div class="row">
-  <div class="right-side">
-    <div class="minor-details">
-  <ul>
+<div class="container restaurant-details-div">
+<div class="container">
+ 
+  
     
-    <li>Where to go: {{restaurant.location.address}}</li>
-    <li>Rating {{restaurant.user_rating.aggregate_rating}} out of 5 <img src="assets/star.png" alt=""></li>
-    <li>This is a {{restaurant.cuisines}} restaurant</li>
-    <li>Dinner for two will set you back ${{restaurant.average_cost_for_two}}</li>
+  
     
-  </ul>
-</div>
-  </div>
-  <div class="left-side">
+    <li><div class="static-html">Address</div>{{restaurant.location.address}}</li>
+    <li><div class="static-html">Rating</div>{{restaurant.user_rating.aggregate_rating}} out of 5 <img src="assets/star.png" alt="small gold star"></li>
+    <li><div class="static-html">Type of cuisine:</div>{{restaurant.cuisines}}</li>
+    <li><div class="static-html">Average cost for 2</div>${{restaurant.average_cost_for_two}}</li>
+    
+    
+
+
+  
+  <div class="container top-pad">
   <agm-map [latitude]="coords[0]" [longitude]="coords[1]">
     <agm-marker [latitude]="coords[0]" [longitude]="coords[1]"></agm-marker>
   </agm-map>
-  </div>
-  </div>
+</div>
+  
+  
   <button (click)="join(restaurant.id)">I want to eat here!</button>
 </div>
-<div *ngIf="reservations" class="users-who-eat-here">
-  <h2>Users who want to eat placeholder</h2>
-  <div *ngFor="let user of reservations">
-    <li>{{user.username}}</li>
-    <li>{{user.firstName}}</li>
-    <li>{{user.lastName}}</li>
-    <li>{{user.email}}</li>
+<div *ngIf="reservations" class="container users-who-eat-here">
+  <h2>Others who want to eat here!</h2>
+  <div *ngFor="let user of reservations" class="users">
+    <li>Username: {{user.username}}</li>
+    <li>First name: {{user.firstName}}</li>
+    <li>Contact email: {{user.email}}</li>
+    <div class="space"></div>
   </div>
   
 </div>
-<div *ngIf="!reservations" class="users-who-eat-here">
-  <h2>You can be the first to eat here</h2>
+</div>
+<div *ngIf="!reservations" class="container users-who-eat-here">
+  <h2>You can be the first to schedule a meeting.</h2>
 </div>
 

@@ -1,55 +1,69 @@
 <navbar></navbar>
 <h1>Meal Matcher</h1>
 <div class="container">
-<div class="form">
-<form  (ngSubmit)="search(input.value, miles.value)" >
-    <div class="flex-container">
-    <div class="row-1">
-        <input #input name="searchBox" class="input" id="search-bar"  placeholder="Pick a city ex. Orlando">
-        <mat-form-field
-        id="miles-dropdown"
-        [hideRequiredMarker]="options.value.hideRequired"
-        [floatLabel]="options.value.floatLabel">
-        <mat-select  #miles name="distance">
-            <mat-option value="1">1 Mile</mat-option>
-            <mat-option value="5">5 Miles</mat-option>
-            <mat-option  value="10">10 Miles</mat-option>
-            <mat-option  value="25">25 Miles</mat-option>
-            <mat-option  value="50">50 Miles</mat-option>
-        </mat-select>
-        <mat-placeholder><i>Distance away</i></mat-placeholder>
-    </mat-form-field>
+    <div class="form">
+        <form (ngSubmit)="search(input.value, miles.value)">
+
+
+            <input #input name="searchBox" class="input" id="search-bar" placeholder="Pick a city ex. Orlando">
+            <mat-form-field id="miles-dropdown" [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <mat-select #miles name="distance">
+                    <mat-option value="5">5 Miles</mat-option>
+                    <mat-option value="10">10 Miles</mat-option>
+                    <mat-option value="25">25 Miles</mat-option>
+                    <mat-option value="50">50 Miles</mat-option>
+                </mat-select>
+                <mat-placeholder>
+                    <i>Distance away</i>
+                </mat-placeholder>
+            </mat-form-field>
+            <button mat-raised-button type="submit" id="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <p>
+            Here at MealMatcher we wish to connect people through food. Search for a city you desire to meet new people and exprience
+            new food in! Simply type this city in above and select how far you are willing to travel from the city's center.
+            Enjoy the meal!
+        </p>
+    </div>
+    <div class="container">
+        <h2>Need insparation?</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="assets/food-image/big-cheeseburger.jpg" height="300" alt="cheese burger with onion">
+            </div>
+            <div class="col-sm-6">
+                <img src="assets/food-image/cheese-rice.jpg" height="300" alt="">
+            </div>
+            <div class="col-sm-6">
+                <img src="assets/food-image/pizza.jpg" height="300" alt="">
+            </div>
+            <div class="col-sm-6">
+                <img src="assets/food-image/pork-loin.jpg" height="300" alt="">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="assets/food-image/rice-pork.jpg" height="300" alt="">
+            </div>
+            <div class="col-sm-6">
+                <img src="assets/food-image/tacos.jpg" height="300" alt="">
+            </div>
+            <div class="col-sm-6">
+                <img src="assets/food-image/vegan-grass.jpg" height="300" alt="">
+            </div>
+            <div class="col-sm-6">
+                <img src="assets/food-image/vegan-salad.jpg" height="300" alt="">
+            </div>
+        </div>
+
+
+
+    </div>
 </div>
-</div>
-    <button mat-raised-button  type="submit" id="submit" >Search</button>
-</form>
-</div>
-<div class="image-table">
-    <table>
-            <tr>
-                    <img class="table-img" src="assets/food-image/big-cheeseburger.jpg" alt="">
-                    <img class="table-img" src="assets/food-image/cheese-rice.jpg" alt="">
-            
-                    <img class="table-img" src="assets/food-image/pizza.jpg" alt="">
-                    <img class="table-img" src="assets/food-image/pork-loin.jpg" alt="">'
-                </tr>
-                <tr>
-                     <img class="table-img" src="assets/food-image/rice-pork.jpg" alt="">
-                     <img class="table-img" src="assets/food-image/tacos.jpg" alt="">
-                
-                     <img class="table-img" src="assets/food-image/vegan-grass.jpg" alt="">
-                     <img class="table-img" src="assets/food-image/vegan-salad.jpg" alt="">'
-                </tr>
-        
-</table>
-                
-           
-
-    
-
-
-
-</div>
-</div>
-
-

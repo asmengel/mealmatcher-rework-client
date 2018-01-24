@@ -1,45 +1,77 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
 agm-map {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     zoom: .8;
     position: relative;
     display: inline-block;
     align-content: center;
 }
+.static-html{
+    font-size: 20px;
+    border-bottom: 2px solid grey;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/* ul {
+    text-align: left;
+} */
 
+.top-pad {
+    margin-top: 20px;
+}
 button {
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
+    
     margin-top: 20px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
     z-index: 5;
+    
 }
+/* li {
+    text-align: left;
+    font-size: 16px;
+} */
 h1 {
     font-size: 3em;
     text-align: center;
     text-overflow: ellipsis;
     word-wrap: break-word;
     position: relative;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 20px;
     display: inline-block;
     background-color:#FFCC99; 
     /* border-radius: 6px;  */
     width: 100%;
+    font-family: 'Cookie', cursive;
 }
 
+h2 {
+    font-size: 20px;
+    color: white;
+}
 .restaurant-details-div {
     background-color: #FFFDD0; 
-    border-radius: 6px; 
-    padding: 40px 100px; 
-    margin: 2px 0px; 
+    
 
 }
 .users-who-eat-here {
     background-color: #6b3e26; 
     border-radius: 6px; 
-    padding: 40px 100px; 
+    padding: 5px 5px;
     margin: 2px 0px;
-
+    color: white;
+}
+.users {
+    background-color: #c2f2d0;
+    color: black;
+}
+.space {
+    margin-bottom: 5px;
 }

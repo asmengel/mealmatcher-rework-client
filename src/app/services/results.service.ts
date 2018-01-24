@@ -6,13 +6,14 @@ import { Http, Headers, RequestOptions} from '@angular/http';
 export class ResultsService extends DataService{
  public static results;
   constructor(public http: Http) { 
-    super( 'http://localhost:8080', http);
+    // changed from localhost8080
+    super( 'https://themealmatcher.herokuapp.com', http);
  
   
   }
 
   googlePlaces(lat, lng) {
-    console.log('googleplacesservice', lat, lng);
+    //console.log('googleplacesservice', lat, lng);
     return this.http.get(`${this.url}/googleplaces?location=${lat},${lng}`)
 
     .map(response => response.json())

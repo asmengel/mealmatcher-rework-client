@@ -32,7 +32,7 @@ returnUrl: string;
 
       //this.authService.logout();
 
-      console.log(this.route.snapshot)
+      //console.log(this.route.snapshot)
     }
 
     openSnackBar(message: string, action: string) {
@@ -48,7 +48,7 @@ returnUrl: string;
       .subscribe(
         data => {
           if(this.returnUrl) {
-            console.log(this.returnUrl);
+            //console.log(this.returnUrl);
           this.router.navigateByUrl(this.returnUrl);
           }
           else this.router.navigateByUrl("/");

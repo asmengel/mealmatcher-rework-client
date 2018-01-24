@@ -9,9 +9,13 @@
     float: right;
     position: relative;
     
-    margin: 20px;
+    margin: 10px;
     margin-top: 3px;
+    z-index: 5;
     
+}
+.mat-menu-item:hover:not([disabled]) {
+    background: 	#00FFFF;
 }
 .subnav {
     color: rgba(255,255,255,.87);

@@ -21,10 +21,11 @@ export class AuthService {
         Authorization: `Basic ${btoa(credentials.username+':'+credentials.password)}`
       }
     }
-   return this.http.post('http://localhost:8080/api/auth/login', JSON.stringify(credentials), options)
+    // changed from localhost8080
+   return this.http.post('https://themealmatcher.herokuapp.com/api/auth/login', JSON.stringify(credentials), options)
     .map(response => {
       let result = response.json();
-      console.log(result, response);
+      //console.log(result, response);
       if (result && result.authToken) {
         localStorage.setItem('token', result.authToken);
 

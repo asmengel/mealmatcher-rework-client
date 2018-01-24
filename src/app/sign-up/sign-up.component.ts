@@ -29,7 +29,7 @@ loading = false;
   }
 
   signUp(data) {
-    console.log('getting submission', data)
+    //console.log('getting submission', data)
     this.loading = true;
     this.service.signUp(data)
       .subscribe(
@@ -37,7 +37,7 @@ loading = false;
         this.loginService.login(data)
         .subscribe(waiting => {
           if(this.returnUrl) {
-            console.log(this.returnUrl);
+           // console.log(this.returnUrl);
           this.router.navigateByUrl(this.returnUrl);
           }
           else this.router.navigateByUrl("/thank-you");

@@ -7,13 +7,16 @@ h1 {
     position: relative;
 
 }
-.flex-container {
+h2 {
+    border-bottom: 3px solid grey;
+}
+/* .flex-container {
     display: inline-flex;
 }
 .row-1 {
     flex-direction: row;
-}
-#search-bar {
+} */
+/* #search-bar {
     width: 50%;
     margin: 2px;
 }
@@ -21,8 +24,11 @@ h1 {
     width: 40%;
     margin: 2px;
     
+} */
+.container {
+    margin-top: 20px;
+    
 }
-
 button {
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
@@ -35,6 +41,9 @@ button {
 
 table {
     float: center;
+}
+img{
+    width: 100%;
 }
 .image-table {
     display: block;

@@ -26,10 +26,10 @@ export class ResultsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('results component fired');
+    //console.log('results component fired');
     this.route.params.subscribe(params => {
       this.restaurants = JSON.parse(params['results']);
-      console.log(this.restaurants);
+      //console.log(this.restaurants);
       //this.google(this.restaurants)
       
    }); 

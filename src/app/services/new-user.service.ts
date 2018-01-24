@@ -7,7 +7,8 @@ export class NewUserService extends DataService {
   headers: any;
   public static user;
   constructor(public http: Http) {
-    super('http://localhost:8080', http);
+    // changed from localhost8080
+    super('https://themealmatcher.herokuapp.com', http);
   }
 
   signUp(data) {
@@ -16,7 +17,7 @@ export class NewUserService extends DataService {
         "content-type": "application/json"
       }
     }
-    console.log('newuser', data);
+    //console.log('newuser', data);
     return this.http.post(this.url + "/api/users", JSON.stringify(data), options)
       .map(response => {
         response.json()

@@ -1,8 +1,22 @@
+h1 {
+  display: block;
+  text-align: center;
+  position: relative;
+  padding-top: 9vh;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
   
   .login-container > * {
     width: 100%;
   }
+  button {
+    color: rgba(255,255,255,.87);
+    background-color: #232b2b;
+    margin-top: 20px;
+    z-index: 5;
+}
