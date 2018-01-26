@@ -28,7 +28,8 @@ loading = false;
     });
   }
 
-  signUp(data) {
+  signUp(data, valid) {
+    if(!valid) return
     //console.log('getting submission', data)
     this.loading = true;
     this.service.signUp(data)

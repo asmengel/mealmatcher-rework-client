@@ -1,7 +1,7 @@
 import { NewUserService } from './services/new-user.service';
 import {MatSnackBarModule, MatOptionModule, MatSelectModule} from '@angular/material';
 import { DataService } from './services/data.service';
-//import { AdminAuthGuard } from './services/admin-auth-guard.service';
+import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -124,7 +124,7 @@ export function getAuthHttp(http) {
     FormBuilder,
     AuthService,
     AuthGuard,
-    //AdminAuthGuard,
+    AdminAuthGuard,
     AuthHttp,
     NewUserService,
     {
