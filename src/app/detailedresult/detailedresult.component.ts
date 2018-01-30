@@ -11,6 +11,7 @@ import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { NotFoundError } from '../common/not-found-error';
+import { error } from 'util';
 
 @Component({
   selector: 'detailedresult',
@@ -36,16 +37,22 @@ export class DetailedresultComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit() { 
+    console.log('inside detailedResults'); 
     //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     //console.log('detailed results fired');
     this.route.params.subscribe(params => {
       this.restaurant = JSON.parse(params['restaurant']);
+      console.log('past restaurant data render')
       //console.log(this.restaurant);
-      this.seeGuests(this.restaurant);
+       this.seeGuests(this.restaurant);
+      console.log('see guests past');
       this.showMap(this.restaurant);
-      this.google(this.restaurant.location.latitude, this.restaurant.location.longitude)
-      this._compiler.clearCache();
+      console.log('map passed');
+       this.google(this.restaurant.location.latitude, this.restaurant.location.longitude)
+      console.log('google called');
+       this._compiler.clearCache();
+      console.log('past clearCache');
     })
 
 
@@ -54,9 +61,12 @@ export class DetailedresultComponent implements OnInit {
     //console.log('google function', lat, lng);
     this.service.googlePlaces(lat, lng)
       .subscribe(response => {
-       // console.log('googleplaces response', response)
+        // console.log('googleplaces response', response)
         this.photo = response.results
-       // console.log('photos', this.photo);
+        // console.log('photos', this.photo);
+      }, error => {
+        // work on this later some crazy errior i believe is related to api
+        console.log(error.originalError, 'google error'); 
       })
   }
 

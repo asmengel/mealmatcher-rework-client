@@ -24,10 +24,7 @@ public searchBox = '';
 
   ngOnInit() {
   }
-// search(data: any, input: number) {
-//  console.log('you submitted data', data, input)
 
-// }
   search(search, input: number) {
   //console.log('search submitted', search, input);
    this.service.geoCode(search)
@@ -51,10 +48,4 @@ public searchBox = '';
   //     console.log('googleplaces response',response)
   //   })
   // }
-
-
-  // .flatMap(response => {
-  //   console.log('googleplaces', response);
-  //  return this.service.googlePlaces(response.results[0].geometry.location.lat, response.results[0].geometry.location.lng)
-  // })
 }

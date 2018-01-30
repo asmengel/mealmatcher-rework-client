@@ -6,7 +6,7 @@ import { Http, Headers, RequestOptions} from '@angular/http';
 export class ResultsService extends DataService{
  public static results;
   constructor(public http: Http) { 
-    // changed from localhost8080
+    // changed from localhost:8080 themealmatcher.herokuapp.com
     super( 'https://themealmatcher.herokuapp.com', http);
  
   

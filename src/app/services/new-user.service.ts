@@ -7,7 +7,7 @@ export class NewUserService extends DataService {
   headers: any;
   public static user;
   constructor(public http: Http) {
-    // changed from localhost8080 https://themealmatcher.herokuapp.com
+    // changed from localhost:8080 https://themealmatcher.herokuapp.com
     super('https://themealmatcher.herokuapp.com', http);
   }
 

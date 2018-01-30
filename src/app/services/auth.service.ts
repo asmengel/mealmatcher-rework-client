@@ -21,7 +21,7 @@ export class AuthService {
         Authorization: `Basic ${btoa(credentials.username+':'+credentials.password)}`
       }
     }
-    // changed from localhost8080
+    // changed from localhost:8080 or themealmatcher.herokuapp.com
    return this.http.post('https://themealmatcher.herokuapp.com/api/auth/login', JSON.stringify(credentials), options)
     .map(response => {
       let result = response.json();
