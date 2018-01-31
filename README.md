@@ -1,27 +1,17 @@
-# Client
+# MealMatcher
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
+Never dine alone.
 
-## Development server
+## Description
+This app was created with the idea of connectiong people and food. Solo vacationers as well as business travelers often times do not have the opportunity to eat as certian restaurants due to reservations not allowing for 1 person during main meal times. MealMatcher aims to fix that by connecting people who desire to eat at certian restaurants.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Live Link
 
-## Code scaffolding
+The current live version can be found <a href="https://upbeat-beaver-2e0698.netlify.com/">here</a>.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The link to the back-end repo can be found <a href="">here</a>.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Interested in helping?
+This is currently a one person project if you are interested in colloborating on this project you can email me <a href="mailto:anthonymengel1232@gmail.com?Subject=I%20am%20interested%20in%20helping%20with%20Meal%20Matcher" target="_top">here</a>
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
