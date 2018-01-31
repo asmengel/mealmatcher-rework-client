@@ -9,7 +9,7 @@ This app was created with the idea of connectiong people and food. Solo vacation
 
 The current live version can be found <a href="https://upbeat-beaver-2e0698.netlify.com/">here</a>.
 
-The link to the back-end repo can be found <a href="">here</a>.
+The link to the back-end repo can be found <a href="https://github.com/asmengel/mealmatcher-rework-server">here</a>.
 
 
 ## Interested in helping?
