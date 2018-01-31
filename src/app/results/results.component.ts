@@ -24,19 +24,14 @@ export class ResultsComponent implements OnInit {
     private router: Router) { 
     
   }
-
+  // takes data from homepage and parses it for the html to display
   ngOnInit() {
-    //console.log('results component fired');
     this.route.params.subscribe(params => {
       this.restaurants = JSON.parse(params['results']);
-      //console.log(this.restaurants);
-      //this.google(this.restaurants)
-      
    }); 
    }
-  
+  // navigates user to detailed results page and sends all avaliable data
    moreDetails(restaurant) {
-
      this.restaurant = restaurant ;
      this.router.navigate([`/searchresults/${restaurant.name}/${restaurant.id}`, {restaurant: JSON.stringify(this.restaurant)}])
   }

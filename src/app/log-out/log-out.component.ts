@@ -13,7 +13,7 @@ export class LogOutComponent implements OnInit {
     private service: AuthService,
     private router: Router
   ) { }
-
+// logs user out
   ngOnInit() {
     this.service.logout();
     this.router.navigateByUrl("/");

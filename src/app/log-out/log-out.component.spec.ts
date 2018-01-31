@@ -1,3 +1,6 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpModule } from '@angular/http';
+import { AuthService } from './../services/auth.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LogOutComponent } from './log-out.component';
@@ -8,9 +11,11 @@ describe('LogOutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogOutComponent ]
+      imports: [HttpModule, RouterTestingModule],
+      declarations: [LogOutComponent],
+      providers: [AuthService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

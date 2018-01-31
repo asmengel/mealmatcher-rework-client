@@ -8,15 +8,8 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 export class AuthGuard implements CanActivate {
 
   constructor(protected router: Router, protected authService: AuthService) { }
-
-  // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-  //   if (localStorage.getItem('token')) {
-  //     return true;
-  //   }
-  //   this.router.navigate(['/login', { returnUrl: window.location.pathname }]); //{queryParams:
-  //   console.log(window.location.pathname, ' window location');
-  //   return false;
-  // }
+// checks if user is logged in for protected feature,
+// if they are not routes them to login in screen
     canActivate() {
       if (this.authService.isLoggedIn()) return true;
 

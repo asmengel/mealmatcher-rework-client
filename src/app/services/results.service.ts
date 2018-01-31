@@ -11,15 +11,15 @@ export class ResultsService extends DataService{
  
   
   }
-
+// gets pictures from google's database for upcoming feature
   googlePlaces(lat, lng) {
-    //console.log('googleplacesservice', lat, lng);
     return this.http.get(`${this.url}/googleplaces?location=${lat},${lng}`)
 
     .map(response => response.json())
 
     .catch(this.handleError);
   }
+// geocode curtsey of google
   geoCode(search) {
     return this.http.get(`${this.url}/geocode?search=${search}`)
 
@@ -27,7 +27,7 @@ export class ResultsService extends DataService{
 
     .catch(this.handleError);
   }
-
+  // calls db for restaurant data
   searchResults(lat, lng, miles) {
     
     
@@ -40,19 +40,21 @@ export class ResultsService extends DataService{
     
       
   }
-  join(id, restaurant) {                                   //   /join
+  // creates a reservation in my db
+  join(id, restaurant) {                                
     return this.http.post(`${this.url}/api/restaurant/reservations/${id}`, JSON.stringify(restaurant) ,this.jwtHandler())
     .map(response => response.json())
     .catch(this.handleError);
 
   }
-  seeGuests(id) {                                   //   /join
+  // returns list of users who want to eat at restaurant if user is logged in
+  seeGuests(id) {                                   
     return this.http.get(`${this.url}/api/restaurant/info/${id}`, this.jwtHandler())
     .map(response => response.json())
     .catch(this.handleError);
 
   }
-
+// checks if users want to go to a peticular restaurant
   getReservations(id) {
     return this.http.get(`${this.url}/api/restaurant/reservations/${id}`)
     .map(res => res.json())

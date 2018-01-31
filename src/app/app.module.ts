@@ -1,7 +1,6 @@
 import { NewUserService } from './services/new-user.service';
 import {MatSnackBarModule, MatOptionModule, MatSelectModule} from '@angular/material';
 import { DataService } from './services/data.service';
-import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -34,6 +33,55 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { LogOutComponent } from './log-out/log-out.component';
+
+
+export const routes = [
+      
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path:'logout',
+    component: LogOutComponent
+  },
+  {
+    path:'signup',
+    component: SignUpComponent
+  },
+  {
+    path:'thank-you',
+    component: ThankYouComponent
+  },
+  {
+    path:'profile',
+    component: ProfileComponent
+  },
+  {
+    path:'newsearch',
+    component: HomepageComponent
+  },
+  {
+    path:'searchresults/:restaurantname/:id',
+    component: DetailedresultComponent
+  },
+  {
+    path:'searchresults',
+    component: ResultsComponent
+  },
+  {
+    path:'',
+    component: HomepageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: ':route',
+    component: NotfoundComponent
+  }
+
+
+];
+
 
 export function getAuthHttp(http) {
   return new AuthHttp(new AuthConfig({
@@ -73,51 +121,7 @@ export function getAuthHttp(http) {
     HttpModule,
     HttpClientModule,
     
-    RouterModule.forRoot([
-      {
-        path:'login',
-        component: LoginComponent
-      },
-      {
-        path:'logout',
-        component: LogOutComponent
-      },
-      {
-        path:'signup',
-        component: SignUpComponent
-      },
-      {
-        path:'thank-you',
-        component: ThankYouComponent
-      },
-      {
-        path:'profile',
-        component: ProfileComponent
-      },
-      {
-        path:'newsearch',
-        component: HomepageComponent
-      },
-      {
-        path:'searchresults/:restaurantname/:id',
-        component: DetailedresultComponent
-      },
-      {
-        path:'searchresults',
-        component: ResultsComponent
-      },
-      {
-        path:'',
-        component: HomepageComponent,
-        pathMatch: 'full'
-      },
-      {
-        path: ':route',
-        component: NotfoundComponent
-      }
-
-
-    ])
+    RouterModule.forRoot(routes)
     
   ],
   providers: [
@@ -125,7 +129,6 @@ export function getAuthHttp(http) {
     FormBuilder,
     AuthService,
     AuthGuard,
-    AdminAuthGuard,
     AuthHttp,
     NewUserService,
     {

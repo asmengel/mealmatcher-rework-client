@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+// checks if the user is logged in to determine what to display 
   isLogged() {
     return localStorage.token != null 
   }

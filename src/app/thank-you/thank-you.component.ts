@@ -10,7 +10,7 @@ export class ThankYouComponent {
 
   constructor(
     private router: Router) { }
-
+// takes user back to search page
  goHome() {
    this.router.navigateByUrl("/")
  }

@@ -12,7 +12,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class DataService {
   constructor(public url: string, public http: Http) { }
-
+// all functions do what their name says
   getAll() {
     return this.http.get(this.url)
       .map(response => response.json())
