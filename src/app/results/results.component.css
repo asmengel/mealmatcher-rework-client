@@ -1,7 +1,9 @@
 h1 {
+    font-size: 40px;
+    font-size: 10vw;
     font-family: 'Cookie', cursive;
     text-align: center;
-    margin: 5% 22%;
+    margin: 5% 20%;
     padding-top: 5vh;
     position: relative;
 }
