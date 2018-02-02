@@ -16,12 +16,13 @@
 
 
   
-  <div class="container top-pad">
+  <div class="container top-pad map-pic">
   <agm-map [latitude]="coords[0]" [longitude]="coords[1]">
     <agm-marker [latitude]="coords[0]" [longitude]="coords[1]"></agm-marker>
   </agm-map>
+  <img class="google-pic" [src]="photoUrl">
 </div>
-<img [src]="photoUrl">
+
   
   <div class="buttons">
   <button (click)="join(restaurant.id)">I want to eat here!</button>

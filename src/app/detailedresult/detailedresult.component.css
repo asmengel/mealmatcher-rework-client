@@ -8,6 +8,15 @@ agm-map {
     display: inline-block;
     align-content: center;
 }
+.map-pic{
+    display: flex;
+    flex-direction: row;
+}
+.google-pic {
+    height: 280px;
+    width: 350px;
+
+}
 .static-html{
     font-size: 20px;
     border-bottom: 2px solid grey;
@@ -79,4 +88,18 @@ h2 {
 }
 .space {
     margin-bottom: 5px;
+}
+
+@media screen and (max-width:736px){
+.map-pic{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.google-pic {
+    padding-top: 10px;
+    height: 280px;
+    width: 280px;
+
+}
 }

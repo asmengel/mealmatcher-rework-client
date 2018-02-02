@@ -24,11 +24,7 @@ getPhotoUrl(photo) {
   return `${this.url}/placesphoto?photoreference=${photo}`
 
 }
-// googlePhoto(photo) {
-//   return this.http.get(`${this.url}/placesphoto?photoreference=${photo}`)
-//   .map(response => response.json()) 
-//   .catch(this.handleError);
-// }
+
 // geocode curtsey of google
   geoCode(search) {
     return this.http.get(`${this.url}/geocode?search=${search}`)
