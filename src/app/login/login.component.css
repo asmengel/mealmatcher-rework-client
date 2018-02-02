@@ -3,20 +3,30 @@ h1 {
   text-align: center;
   position: relative;
   padding-top: 9vh;
+  font-size: 5vw;
 }
 
-.login-container {
+.container {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
   
-  .login-container > * {
+  .container > * {
     width: 100%;
   }
+  /* form {
+    align-content: center;
+  } */
   button {
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
     margin-top: 20px;
     z-index: 5;
+}
+@media screen and (max-width:1024px){
+
+  h1 {
+    font-size: 10vw;
+  }
 }

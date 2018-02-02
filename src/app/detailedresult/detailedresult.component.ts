@@ -23,6 +23,7 @@ export class DetailedresultComponent implements OnInit {
   response: any;
   reservations: any;
   photo: any;
+  photoUrl: any;
 
 
   @Input() restaurant: any;
@@ -45,14 +46,30 @@ export class DetailedresultComponent implements OnInit {
   }
 // primiming for google places pictures has data just gotta put it in the html
   google(lat, lng) {
+    console.log(lat,lng, 'google places stuff');
     this.service.googlePlaces(lat, lng)
       .subscribe(response => {
-        this.photo = response.results
+        
+        this.photo = response.results[0].photos[0].photo_reference
+        //this.googlePlaces(this.photo)
+        this.photoUrl = this.service.getPhotoUrl(this.photo)
+        console.log(this.photo, 'google response')
       }, error => {
         // work on this later some crazy errior i believe is related to api
         console.log(error.originalError, 'google error');
       })
   }
+
+  // googlePlaces(reference) {
+  //   console.log(reference);
+  //   this.service.googlePhoto(reference)
+  //   .subscribe(response => {
+  //     console.log(response, 'photo respons from google places');
+  //   }), error => {
+  //     console.log(error);
+  //   }
+
+  // }
 
   coords = [];
   // google maps code
@@ -79,7 +96,9 @@ export class DetailedresultComponent implements OnInit {
     console.log('past response', res);
 
   }
-
+  goBack() {
+    window.history.back();
+  }
   // checks to see if user is logged in, if so sends call to backend to add them to list
   join(id) {
 

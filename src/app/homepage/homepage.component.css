@@ -20,21 +20,9 @@ form {
 h2 {
     border-bottom: 3px solid grey;
 }
-/* .flex-container {
-    display: inline-flex;
+.welcome-text {
+    font-size: 2vw;
 }
-.row-1 {
-    flex-direction: row;
-} */
-/* #search-bar {
-    width: 50%;
-    margin: 2px;
-}
-#miles-dropdown {
-    width: 40%;
-    margin: 2px;
-    
-} */
 
 .container {
     margin-top: 20px;
@@ -75,4 +63,9 @@ img{
     background-repeat:   no-repeat;
     background-size:     cover;
     border: 3px solid black;
+}
+@media screen and (max-width:1024px){
+    .welcome-text{
+        font-size: 3vw;
+    }
 }

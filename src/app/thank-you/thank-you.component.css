@@ -4,15 +4,26 @@ h1 {
     margin: 0% 20%;
     padding-top: 5vh;
     position: relative;
+    font-size: 8vw;
 
 }
-
+h4 {
+    text-align: center;
+    font-size:  4vw;
+}
+p {
+    text-align: center;
+    font-size: 2vw;
+}
 button {
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
     margin-left: auto;
     margin-right: auto;
+    font-size: 2.5vw;
     float: center;
     position: relative;
     display: block;
+    height: 5vh;
+    width: 15vw;
 }

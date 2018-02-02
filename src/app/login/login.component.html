@@ -7,13 +7,14 @@
      
             <div *ngIf="invalidLogin" class="alert alert-danger">
               Invalid username or password.</div>
-      <input type="username" name="username" ngModel matInput placeholder="Username">
+      <input required type="username" name="username" ngModel matInput placeholder="Username">
     </mat-form-field>
+    <br>
     <mat-form-field>
-        <input type="password" name="password" ngModel matInput placeholder="Password">
+        <input required type="password" name="password" ngModel matInput placeholder="Password">
       
     </mat-form-field>
- 
+ <br>
     <button mat-button>Log In</button><button mat-button (click)="signUp()">Sign Up!</button>
      
 

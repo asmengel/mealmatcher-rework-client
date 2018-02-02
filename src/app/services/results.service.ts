@@ -6,8 +6,8 @@ import { Http, Headers, RequestOptions} from '@angular/http';
 export class ResultsService extends DataService{
  public static results;
   constructor(public http: Http) { 
-    // changed from localhost:8080 themealmatcher.herokuapp.com
-    super( 'https://themealmatcher.herokuapp.com', http);
+    // changed from localhost:8080 https://themealmatcher.herokuapp.com
+    super( 'http://localhost:8080', http);
  
   
   }
@@ -19,6 +19,16 @@ export class ResultsService extends DataService{
 
     .catch(this.handleError);
   }
+// gets photo curtsey of google
+getPhotoUrl(photo) {
+  return `${this.url}/placesphoto?photoreference=${photo}`
+
+}
+// googlePhoto(photo) {
+//   return this.http.get(`${this.url}/placesphoto?photoreference=${photo}`)
+//   .map(response => response.json()) 
+//   .catch(this.handleError);
+// }
 // geocode curtsey of google
   geoCode(search) {
     return this.http.get(`${this.url}/geocode?search=${search}`)

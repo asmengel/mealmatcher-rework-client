@@ -7,6 +7,10 @@
 
 # dependencies
 /node_modules
+.env
+.env.example
+.env.local
+.env.staging
 
 # IDEs and editors
 /.idea
@@ -40,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.env
+.env.example
+.env.local
+.env.staging

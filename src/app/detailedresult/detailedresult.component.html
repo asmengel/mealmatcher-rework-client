@@ -21,9 +21,12 @@
     <agm-marker [latitude]="coords[0]" [longitude]="coords[1]"></agm-marker>
   </agm-map>
 </div>
+<img [src]="photoUrl">
   
-  
+  <div class="buttons">
   <button (click)="join(restaurant.id)">I want to eat here!</button>
+  <button (click)="goBack()">I do not want to eat here!</button>
+</div>
 </div>
 <div *ngIf="reservations" class="container users-who-eat-here">
   <h2>Others who want to eat here!</h2>

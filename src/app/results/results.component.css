@@ -7,6 +7,13 @@ h1 {
     padding-top: 5vh;
     position: relative;
 }
+h2 {
+    font-size: 4vw;
+}
+li {
+    text-align: center;
+    font-size: 3vw;
+}
 
 .results-title {
     background-color:#FFCC99; 
@@ -26,6 +33,14 @@ button {
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
     margin-top: 5px;
+    align-content: center;
+    display: block;
+    padding-top: 5px;
+    margin: auto;
+}
+img {
+    width: 2vw;
+    padding-bottom: 11px;
 }
 @media screen and (max-width:1024px){
     body {
@@ -37,6 +52,10 @@ button {
         -moz-background-size: cover; 
         -o-background-size: cover; 
         background-size: cover;
+    }
+    img {
+        width: 4vw;
+        padding-top: 3px;
     }
     
     .results-container {
@@ -50,5 +69,11 @@ button {
     
     .results-title {
         padding: 30px 30px;  
+    }
+    li {
+        font-size: 4vw;
+    }
+    h2 {
+        font-size: 6vw;
     }
 }

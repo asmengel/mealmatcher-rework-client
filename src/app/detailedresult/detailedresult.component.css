@@ -22,21 +22,24 @@ agm-map {
 .top-pad {
     margin-top: 20px;
 }
-button {
-    color: rgba(255,255,255,.87);
-    background-color: #232b2b;
-    
-    margin-top: 20px;
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-    z-index: 5;
+.buttons {
+    display: flex;
     
 }
-/* li {
-    text-align: left;
-    font-size: 16px;
-} */
+button {
+    flex-direction: row;
+    color: rgba(255,255,255,.87);
+    background-color: #232b2b;
+    align-content: flex-start;
+    margin-top: 20px;
+    width: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 5;
+    font-size: 2vw;
+    
+}
+
 h1 {
     font-size: 3em;
     text-align: center;
