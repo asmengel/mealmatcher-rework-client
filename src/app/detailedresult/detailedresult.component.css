@@ -7,14 +7,17 @@ agm-map {
     position: relative;
     display: inline-block;
     align-content: center;
+    margin-left: 10vw;
 }
 .map-pic{
     display: flex;
     flex-direction: row;
 }
 .google-pic {
+   margin-left: 15vw;
     height: 280px;
     width: 350px;
+    
 
 }
 .static-html{
@@ -45,7 +48,7 @@ button {
     margin-left: 10%;
     margin-right: 10%;
     z-index: 5;
-    font-size: 2vw;
+    font-size: 1.8vw;
     
 }
 
@@ -90,16 +93,39 @@ h2 {
     margin-bottom: 5px;
 }
 
-@media screen and (max-width:736px){
-.map-pic{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-.google-pic {
-    padding-top: 10px;
-    height: 280px;
-    width: 280px;
+@media screen and (max-width:1024px){
+    .map-pic{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+    }
+    .google-pic {
+        padding-top: 10px;
+        margin-left: 19vw;
+        height: 280px;
+        width: 280px;
+        align-content: center;
+        /* margin: auto 0; */
+    
+    }
+    }
+    @media screen and (max-width:736px){
+        .map-pic{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+        .google-pic {
+            padding-top: 10px;
+            margin-left: 32px;
+            height: 280px;
+            width: 280px;
+            align-content: center;
+            /* margin: auto 0; */
+        
+        }
+        button {
+            font-size: 3vw;
 
-}
-}
+        }
+        }
