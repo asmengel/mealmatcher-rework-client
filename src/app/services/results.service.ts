@@ -7,7 +7,7 @@ export class ResultsService extends DataService{
  public static results;
   constructor(public http: Http) { 
     // changed from localhost:8080 https://themealmatcher.herokuapp.com
-    super( 'http://localhost:8080', http);
+    super( 'https://themealmatcher.herokuapp.com', http);
  
   
   }
