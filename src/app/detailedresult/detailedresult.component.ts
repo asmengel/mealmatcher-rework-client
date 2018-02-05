@@ -44,6 +44,11 @@ export class DetailedresultComponent implements OnInit {
       this._compiler.clearCache();
     })
   }
+
+  sendEmail(email) {
+    window.location.href=`mailto:${email}`;
+
+  }
 // primiming for google places pictures has data just gotta put it in the html
   google(lat, lng) {
     this.service.googlePlaces(lat, lng)

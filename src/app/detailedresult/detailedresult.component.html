@@ -31,12 +31,18 @@
 </div>
 <div *ngIf="reservations" class="container users-who-eat-here">
   <h2>Others who want to eat here!</h2>
-  <div *ngFor="let user of reservations" class="users">
-    <li>Username: {{user.username}}</li>
-    <li>First name: {{user.firstName}}</li>
-    <li>Contact email: {{user.email}}</li>
+  <div class="users row">
+  <li class="colum-top col-md-3">First Name</li>
+  <li class="colum-top col-md-3">Contact Email</li>
+  <li class="colum-top col-md-3">&nbsp;</li>
+</div>
+  <div *ngFor="let user of reservations" class="users row">
+    <li class="user-info col-md-3">{{user.firstName}}</li>
+    <li class="user-info col-md-3"> {{user.email}}</li>
+    <li class="user-info col-md-3"><button class="contact-button " (click)="sendEmail(user.email)">Contact</button></li>
     <div class="space"></div>
   </div>
+  
   
 </div>
 </div>

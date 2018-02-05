@@ -68,7 +68,7 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 4vw;
     color: #6b3e26;;
 }
 .restaurant-details-div {
@@ -86,9 +86,38 @@ h2 {
     text-align: center;
 }
 .users {
-    background-color: #FBC02D;
-    color: black;
+    /* display: flex;
+    flex-direction: row; */
+    font-size: 2vw;
+    /* background-color: #FBC02D; */
+    color: #6b3e26;
 }
+.colum-top {
+    /* flex-direction: row; */
+    font-size: 2.2vw;
+    margin-left: 5vw;
+    /* break-after: always; */
+    /* flex-grow: 1; */
+    text-align: left;
+}
+.user-info {
+    /* flex-direction: row; */
+    font-size: 2vw;
+    margin-left: 5vw;
+    flex-grow: 1;
+    text-align: left;
+    
+}
+.contact-button {
+    color: rgba(255,255,255,.87);
+    background-color: #232b2b;
+    margin: auto;
+    width: 50%;
+   padding: 0 4%;
+    z-index: 5;
+    font-size: 1.8vw;
+}
+
 .space {
     margin-bottom: 5px;
 }
@@ -124,8 +153,26 @@ h2 {
             /* margin: auto 0; */
         
         }
+        h2 {
+            font-size: 6vw;
+        }
         button {
-            font-size: 3vw;
+            font-size: 3.5vw;
+            
 
+        }
+        .user-info {
+            font-size: 3.5vw;
+           
+          
+        }
+        .colum-top {
+            font-size: 4vw;
+          
+
+        }
+        .contact-button{
+            width: 100%;
+    
         }
         }
