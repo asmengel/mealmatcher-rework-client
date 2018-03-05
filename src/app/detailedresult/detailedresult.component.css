@@ -141,6 +141,9 @@ h2 {
         /* margin: auto 0; */
     
     }
+    h1 {
+        width: 95%;
+    }
     }
     @media screen and (max-width:736px){
         .map-pic{
@@ -178,5 +181,8 @@ h2 {
         .contact-button{
             width: 100%;
     
+        }
+        h1 {
+            width: 100%;
         }
         }
