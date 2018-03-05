@@ -1,8 +1,31 @@
+<nav class="hipster">
+<div class="container" id="full-nav">
+    <ul class="nav-items">
+        <li class="header">Meal Matcher</li>
+        <li class="space"></li>
+        <a routerLink="" class="link"><button>Home</button></a>
+        <a routerLink="/login" class="link"><button *ngIf="!isLogged()">Login</button></a>
+        <a routerLink="/signup" class="link"><button *ngIf="!isLogged()">Sign Up!</button></a>
+        <a routerLink="/logout" class="link"><button *ngIf="isLogged()">Logout</button></a>
+        
+    </ul>
+
+</div>
+ 
+</nav>
+
+
+<!-- angular material bar -->
+<nav class="angular-material">
+    <div class="container2" id="material-bar">
+        <li class="header2">Meal Matcher</li>
+        <li class="space"></li>
 <button mat-button id="navbar" [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu" >
     <a *ngIf="!isLogged()" routerLink="/signup"><button class="subnav" routerLinkActive="active current" mat-menu-item>Sign Up</button></a>
     <a *ngIf="!isLogged()" routerLink="/login"><button class="subnav" routerLinkActive="active current" mat-menu-item>Log In</button></a>
-    <!-- <a routerLink="/profile"><button routerLinkActive="active current" mat-menu-item>My Profile</button></a> -->
     <a routerLink=""><button class="subnav" routerLinkActive="active current" mat-menu-item>Home</button></a>
     <a *ngIf="isLogged()" routerLink="/logout"><button class="subnav" routerLinkActive="active current" mat-menu-item>Logout</button></a>
 </mat-menu>
+</div>
+</nav>

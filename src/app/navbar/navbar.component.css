@@ -3,21 +3,104 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#navbar {
-    color: rgba(255,255,255,.87);
-    background-color: #232b2b;
-    float: right;
-    position: relative;
-    
-    margin: 10px;
-    margin-top: 3px;
-    z-index: 5;
-    
+
+
+@media screen and (min-width:737px) {
+    .nav-items {
+        display:flex;
+        flex-direction: row;
+    }
+    .space {
+        flex-grow: 2;
+    }
+     
+    button {
+        color: rgba(255,255,255,.87);
+        background-color: #232b2b;
+        flex-grow: 1;
+        flex-basis: 10%;
+        border-color: #232b2b;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    button:hover {
+        color: #FFF64D;
+    }
+    .header {
+        flex-basis: 10%;
+        flex-grow: 1;
+        color: #FFF64D;
+        font-size: 45px;
+        font-family: 'Cookie', cursive;
+        text-align: left;
+    }
+    .header2{
+        display: none;
+    }
+    .container {
+        width: 100%;
+        height: 50px;
+        background-color: #232b2b;
+    }
+    #navbar {
+        display: none;
+    }
 }
-.mat-menu-item:hover:not([disabled]) {
-    background: 	#757575;
-}
-.subnav {
-    color: rgba(255,255,255,.87);
-    background-color: #232b2b;
+
+
+
+@media screen and (max-width:736px) and (min-width:200px){
+    #full-nav {
+        display: none;
+    }
+    #material-bar {
+        display: flex;
+        flex-direction: row;
+    
+    }
+  
+    .container2 {
+        width: 100%;
+        height: 50px;
+        background-color: #232b2b;
+    }
+
+    .header2 {
+        flex-basis: 40%;
+        flex-grow: 2;
+        color: #FFF64D;
+        font-size: 35px;
+        font-family: 'Cookie', cursive;
+        
+    }
+    .space{
+        flex-basis: 10%;
+        flex-grow: 1;
+    }
+    
+    #navbar {
+        flex-basis: 20%;
+        flex-grow: 1;
+        color: rgba(255,255,255,.87);
+        background-color: #232b2b;
+        border-color: #232b2b;
+        /* float: right;
+        position: relative; */
+        
+        margin: 10px;
+        margin-top: 3px;
+        z-index: 5;
+        
+    }
+    .mat-menu-content {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .mat-menu-item:hover:not([disabled]) {
+        background: 	#757575;
+    }
+    .subnav {
+        color: rgba(255,255,255,.87);
+        background-color: #232b2b;
+    }
 }
