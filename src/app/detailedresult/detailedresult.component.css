@@ -9,12 +9,22 @@ agm-map {
     align-content: center;
     margin-left: 10vw;
 }
+li {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 18px;
+}
+.star {
+    height: 16px;
+    width: 16px;
+    margin-bottom: 5px;
+}
+
 .map-pic{
     display: flex;
     flex-direction: row;
 }
 .google-pic {
-   margin-left: 15vw;
+   /* margin-left: 15vw; */
     height: 280px;
     width: 350px;
     
@@ -38,7 +48,7 @@ agm-map {
     display: flex;
     
 }
-button {
+/* button {
     flex-direction: row;
     color: rgba(255,255,255,.87);
     background-color: #232b2b;
@@ -50,6 +60,28 @@ button {
     z-index: 5;
     font-size: 1.8vw;
     
+} */
+.contanier2 {
+    display: flex;
+}
+.map {
+    flex-direction: row;
+    flex-grow: 1;
+}
+.image {
+    flex-direction: row;
+    flex-grow: 1;
+}
+.space {
+    flex-grow: 1;
+}
+button {
+    margin-top: 20px;
+    flex-grow: 2;
+    flex-direction: row;
+    font-size: 1.8vw;
+    color: rgba(255,255,255,.87);
+    background-color: #232b2b;
 }
 
 h1 {
@@ -63,7 +95,7 @@ h1 {
     display: block;
     background-color:#FFCC99; 
     /* border-radius: 6px;  */
-    width: 90%;
+    width: 95%;
     font-family: 'Cookie', cursive;
     margin-left: auto;
     margin-right: auto;
@@ -77,6 +109,7 @@ h2 {
 }
 .restaurant-details-div {
     background-color: #FFFDD0; 
+    width: 95%;
     
 
 }
@@ -129,15 +162,16 @@ h2 {
 @media screen and (max-width:1024px){
     .map-pic{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-content: center;
     }
     .google-pic {
         padding-top: 10px;
-        margin-left: 19vw;
+        /* margin-left: 19vw; */
         height: 280px;
         width: 280px;
         align-content: center;
+        margin-left: 30px;
         /* margin: auto 0; */
     
     }
@@ -149,16 +183,23 @@ h2 {
         .map-pic{
             display: flex;
             flex-direction: column;
-            align-content: center;
+            /* align-content: center; */
         }
         .google-pic {
+            
             padding-top: 10px;
-            margin-left: 32px;
-            height: 280px;
-            width: 280px;
+            /* margin-left: 32px; */
+            /* height: 280px;
+            width: 280px; */
+            flex-direction: column;
+            flex-basis: 80%;
+            /* align-self: center; */
             align-content: center;
             /* margin: auto 0; */
         
+        }
+        li {
+            font-size: 15px;
         }
         h2 {
             font-size: 6vw;

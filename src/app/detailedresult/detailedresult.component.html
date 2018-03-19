@@ -8,7 +8,7 @@
   
     
     <li><div class="static-html">Address</div>{{restaurant.location.address}}</li>
-    <li><div class="static-html">Rating</div>{{restaurant.user_rating.aggregate_rating}} out of 5 <img src="assets/star.png" alt="small gold star"></li>
+    <li><div class="static-html">Rating</div>{{restaurant.user_rating.aggregate_rating}} out of 5 <img class="star" src="assets/star.ico" alt="small gold star"></li>
     <li><div class="static-html">Type of cuisine:</div>{{restaurant.cuisines}}</li>
     <li><div class="static-html">Average cost for 2</div>${{restaurant.average_cost_for_two}}</li>
     
@@ -16,16 +16,22 @@
 
 
   
-  <div class="container top-pad map-pic">
+  <div class="container2 top-pad map-pic">
+    <div class="map">
   <agm-map [latitude]="coords[0]" [longitude]="coords[1]">
     <agm-marker [latitude]="coords[0]" [longitude]="coords[1]"></agm-marker>
   </agm-map>
+</div>
+<div class="space"></div>
+<div class="image">
   <img class="google-pic" [src]="photoUrl">
+</div>
 </div>
 
   
-  <div class="buttons">
+  <div class="buttons buttons-container">
   <button (click)="join(restaurant.id)">I want to eat here!</button>
+  <div class="space"></div>
   <button (click)="goBack()">I do not want to eat here!</button>
 </div>
 </div>
