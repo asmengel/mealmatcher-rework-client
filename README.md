@@ -7,11 +7,15 @@ This app was created with the idea of connectiong people and food. Solo vacation
 
 ## Live Link
 
-The current live version can be found <a href="https://mealmatcher.netlify.com/">here</a>.
+The current live version can be found <a href="http://anthonymengel.com/mealMatcher/">here</a>.
 
 The link to the back-end repo can be found <a href="https://github.com/asmengel/mealmatcher-rework-server">here</a>.
 
+## Screen Shots
+
+<img src="./src/app/assets/mm-home.png">
+<img src="./src/app/assets/mm-result.png">
 
 ## Interested in helping?
-This is currently a one person project if you are interested in colloborating on this project you can email me <a href="mailto:anthonymengel1232@gmail.com?Subject=I%20am%20interested%20in%20helping%20with%20Meal%20Matcher" target="_top">here</a>
+This is currently a one person project if you are interested in colloborating on this project you can email me <a href="mailto:anthony@anthonymengel.com?Subject=I%20am%20interested%20in%20helping%20with%20Meal%20Matcher" target="_top">here</a>
 
