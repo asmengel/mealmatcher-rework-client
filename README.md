@@ -13,8 +13,8 @@ The link to the back-end repo can be found <a href="https://github.com/asmengel/
 
 ## Screen Shots
 
-<img src="./src/app/assets/mm-home.png">
-<img src="./src/app/assets/mm-result.png">
+<img src="./src/assets/mm-home.png">
+<img src="./src/assets/mm-result.png">
 
 ## Interested in helping?
 This is currently a one person project if you are interested in colloborating on this project you can email me <a href="mailto:anthony@anthonymengel.com?Subject=I%20am%20interested%20in%20helping%20with%20Meal%20Matcher" target="_top">here</a>
